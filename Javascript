@@ -1,0 +1,114 @@
+
+document.addEventListener("DOMContentLoaded", () => {
+  // MOBILE NAVIGATION
+  const menuToggle = document.querySelector(".menu-toggle");
+  const nav = document.querySelector(".main-nav");
+
+  if (menuToggle && nav) {
+    menuToggle.addEventListener("click", () => {
+      const isOpen = nav.classList.toggle("open");
+
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation" : "Open navigation"
+      );
+
+      menuToggle.textContent = isOpen ? "×" : "☰";
+    });
+  }
+
+  // AUTOMATIC COPYRIGHT YEAR
+  document.querySelectorAll(".current-year").forEach((node) => {
+    node.textContent = new Date().getFullYear();
+  });
+
+  // HOME PAGE SLIDER: CHANGE EVERY 6 SECONDS
+  const slides = Array.from(document.querySelectorAll(".slide"));
+  const dots = Array.from(document.querySelectorAll(".slider-dot"));
+
+  if (slides.length > 1) {
+    let current = 0;
+    let timer;
+
+    const showSlide = (index) => {
+      current = (index + slides.length) % slides.length;
+
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === current);
+      });
+
+      dots.forEach((dot, i) => {
+        dot.classList.toggle("active", i === current);
+        dot.setAttribute("aria-pressed", String(i === current));
+      });
+    };
+
+    const startTimer = () => {
+      window.clearInterval(timer);
+
+      timer = window.setInterval(() => {
+        showSlide(current + 1);
+      }, 6000);
+    };
+
+    // CLICK THE DOTS TO CHANGE SLIDES
+    dots.forEach((dot, index) => {
+      dot.addEventListener("click", () => {
+        showSlide(index);
+        startTimer();
+      });
+    });
+
+    // PAUSE WHILE THE USER HOVERS OVER THE SLIDER
+    const slider = document.querySelector(".home-slider");
+
+    if (slider) {
+      slider.addEventListener("mouseenter", () => {
+        window.clearInterval(timer);
+      });
+
+      slider.addEventListener("mouseleave", startTimer);
+
+      slider.addEventListener("focusin", () => {
+        window.clearInterval(timer);
+      });
+
+      slider.addEventListener("focusout", startTimer);
+    }
+
+    showSlide(0);
+    startTimer();
+  }
+
+  // DEMONSTRATION FORM BEHAVIOUR
+  // Connect a real form backend before publishing.
+  document.querySelectorAll("[data-demo-form]").forEach((form) => {
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const status = form.querySelector(".form-status");
+
+      if (status) {
+        status.textContent =
+          "Thank you! This is demo mode. Connect the form to your email " +
+          "or website backend to receive this request.";
+      }
+
+      form.reset();
+    });
+  });
+
+  // PREVENT PAST BOOKING DATES
+  const dateInput = document.querySelector("#booking-date");
+
+  if (dateInput) {
+    const today = new Date();
+
+    const localToday = new Date(
+      today.getTime() - today.getTimezoneOffset() * 60000
+    ).toISOString().split("T")[0];
+
+    dateInput.min = localToday;
+  }
+});

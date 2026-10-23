@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Consultation | E-World</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/book consultation page.html">
+      <span class="brand-mark">E<span>W</span></span>
+      <span class="brand-copy">
+        <strong>E-WORLD</strong>
+        <small>REAL ESTATE & CONSULTANCY</small>
+      </span>
+    </a>
+    <button class="menu-toggle" aria-label="Open navigation"
+      aria-expanded="false">☰</button>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="/Index.html">Home</a>
+      <a href="/About us.html">About Us</a>
+      <a href="/Service page.html">Services</a>
+      <a class="active" href="/book consultation page.html">Book Consultation</a>
+      <a href="/contact us.html">Contact Us</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-banner">
+      <p class="eyebrow">LET'S TALK</p>
+      <h1>Book a Consultation</h1>
+      <p>Tell us a little about your goals and request a time to speak with our team.</p>
+    </section>
+
+    <section class="booking-layout section-wrap">
+      <div class="booking-info">
+        <p class="eyebrow green-text">YOUR NEXT STEP STARTS HERE</p>
+        <h2>A focused conversation can bring clarity.</h2>
+        <p>Use the form to share what you would like help with. We will
+          review your request and follow up to confirm availability and
+          the consultation details.</p>
+
+        <div class="booking-point">
+          <span>01</span>
+          <div>
+            <h3>Share your goals</h3>
+            <p>Let us know whether your enquiry is about real estate,
+              business or coaching.</p>
+          </div>
+        </div>
+
+        <div class="booking-point">
+          <span>02</span>
+          <div>
+            <h3>Choose a preferred time</h3>
+            <p>Provide a date and time that works for you. This is a
+              request, not a confirmed booking.</p>
+          </div>
+        </div>
+
+        <div class="booking-point">
+          <span>03</span>
+          <div>
+            <h3>We will follow up</h3>
+            <p>Our team will contact you to discuss the next steps and
+              confirm arrangements.</p>
+          </div>
+        </div>
+      </div>
+
+      <form class="site-form" data-demo-form>
+        <h2>Consultation Request</h2>
+        <p class="form-intro">Fields marked * are required.</p>
+
+        <label for="booking-name">Full name *</label>
+        <input id="booking-name" name="name" type="text"
+          placeholder="Your full name" required>
+
+        <label for="booking-email">Email address *</label>
+        <input id="booking-email" name="email" type="email"
+          placeholder="you@example.com" required>
+
+        <label for="booking-phone">Phone number *</label>
+        <input id="booking-phone" name="phone" type="tel"
+          placeholder="+234..." required>
+
+        <label for="booking-service">Consultation type *</label>
+        <select id="booking-service" name="service" required>
+          <option value="">Choose a service</option>
+          <option>Real Estate Consultancy</option>
+          <option>Business Consultancy</option>
+          <option>Business Coaching & Strategy</option>
+          <option>Professional Consultation</option>
+        </select>
+
+        <div class="form-row">
+          <div>
+            <label for="booking-date">Preferred date *</label>
+            <input id="booking-date" name="date" type="date" required>
+          </div>
+          <div>
+            <label for="booking-time">Preferred time *</label>
+            <select id="booking-time" name="time" required>
+              <option value="">Select time</option>
+              <option>Morning (9am–12pm)</option>
+              <option>Afternoon (12pm–4pm)</option>
+              <option>Evening (4pm–6pm)</option>
+            </select>
+          </div>
+        </div>
+
+        <label for="booking-message">What would you like to discuss? *</label>
+        <textarea id="booking-message" name="message" rows="4"
+          placeholder="Briefly tell us about your goals..."
+          required></textarea>
+
+        <button class="button button-red form-submit" type="submit">
+          Send Consultation Request →
+        </button>
+
+        <p class="form-status" role="status" aria-live="polite"></p>
+        <p class="form-note">
+          Demo form: connect this form to your email or backend
+          before publishing to receive requests.
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <a class="footer-brand" href="/Index.html">E-WORLD</a>
+        <p>Real Estate & Consultancy<br>
+          Business insight. Property guidance. Practical growth.</p>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <a href="/Index.html">Home</a>
+        <a href="/About us.html">About Us</a>
+        <a href="/Service page.html">Services</a>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <a href="/contact us.html">Send an enquiry</a>
+        <p>Nigeria</p>
+      </div>
+    </div>
+    <div class="copyright">
+      © <span class="current-year">2026</span>
+      E-World Real Estate and Consultancy. All rights reserved.
+    </div>
+  </footer>
+
+  <a class="customer-care" href="/contact us.html"
+    aria-label="Contact customer care">
+    <span class="care-icon">✆</span>
+    <span>Contact Customer Care</span>
+  </a>
+</body>
+</html>
